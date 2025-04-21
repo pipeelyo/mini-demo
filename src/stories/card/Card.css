@@ -1,0 +1,102 @@
+/* Card.module.css */
+.cardContainer {
+    max-width: 24rem;
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: #1e293b;
+    display: inline-block; /* Para ponerlas una al lado de la otra */
+    vertical-align: top; /* Para alinear la parte superior */
+    margin-right: 20px; /* Espacio entre las tarjetas (horizontal) */
+    margin-bottom: 0; /* Evita espacio extra si usas inline-block */
+    padding-top: 20px; /* Espacio superior */
+    padding-bottom: 20px; /* Espacio inferior */
+  }
+  
+  /* Elimina el margen derecho de la última tarjeta si es necesario */
+  .cardContainer:last-child {
+    margin-right: 0;
+  }
+  
+  .darkCardContainer {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+  
+  .imageLink {
+    display: block;
+  }
+  
+  .cardImage {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+  }
+  
+  .cardContent {
+    padding: 1.25rem;
+  }
+  
+  .cardTitleLink {
+    display: block;
+  }
+  
+  .cardTitle {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: inherit;
+  }
+  
+  .cardDescription {
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6b7280;
+  }
+  
+  .darkCardDescription {
+    color: #d1d5db;
+  }
+  
+  .readMoreLink {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    background-color: #2563eb;
+    border-radius: 0.5rem;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .readMoreLink:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .readMoreLink:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+  }
+  
+  .darkReadMoreLink {
+    background-color: #1d4ed8;
+  }
+  
+  .darkReadMoreLink:hover {
+    background-color: #1e40af;
+  }
+  
+  .darkReadMoreLink:focus {
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.5);
+  }
