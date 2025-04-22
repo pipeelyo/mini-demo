@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { expect, userEvent, within } from '@storybook/test';
 
 import { Page } from './Page';
-import type { PageItem, Block } from '../../types/contentful'; // Importa la interfaz Block
+import type { PageItem } from '../../types/contentful'; // Importa la interfaz Block
 import mockPagesData from '../../__mocks__/mockPagesData';
 
 const meta = {
