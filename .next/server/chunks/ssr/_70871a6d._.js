@@ -182,7 +182,6 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$s
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-// src/app/page.tsx
 __turbopack_context__.s({
     "default": (()=>HomePage)
 });
@@ -190,30 +189,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$apolloClient$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/apolloClient.ts [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$graphql$2f$queries$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/graphql/queries.ts [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$contentBlock$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/contentBlock.ts [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stories$2f$page$2f$Page$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/stories/page/Page.tsx [app-rsc] (ecmascript)"); // Importa tu componente Page
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stories$2f$page$2f$Page$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/stories/page/Page.tsx [app-rsc] (ecmascript)");
 ;
 ;
 ;
 ;
 ;
 ;
-// ... (opciones de renderMark/renderNode/renderInline)
-async function getData() {
-    try {
-        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$apolloClient$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].query({
-            query: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$graphql$2f$queries$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GET_PAGES_WITH_BLOCKS"]
-        });
-        const pages = data?.pageCollection?.items || [];
-        return {
-            pages
-        };
-    } catch (error) {
-        console.error("Error fetching data:", error);
-        return {
-            pages: []
-        };
-    }
-}
+// Función para obtener bloques con detalles (auxiliar)
 async function getBlockDetails(blocks) {
     if (!blocks) return [];
     const detailedBlocks = await Promise.all(blocks.map(async (blockItem)=>{
@@ -234,8 +217,33 @@ async function getBlockDetails(blocks) {
     }));
     return detailedBlocks;
 }
+// Función principal de carga de datos (SSR)
+async function getData() {
+    try {
+        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$apolloClient$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].query({
+            query: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$graphql$2f$queries$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GET_PAGES_WITH_BLOCKS"],
+            fetchPolicy: 'network-only',
+            context: {
+                fetchOptions: {
+                    next: {
+                        revalidate: 0
+                    }
+                }
+            }
+        });
+        const pages = data?.pageCollection?.items || [];
+        return {
+            pages
+        };
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return {
+            pages: []
+        };
+    }
+}
 async function HomePage() {
-    const { pages } = await getData();
+    const { pages } = await getData(); // ✅ Se ejecuta en cada F5
     const pagesWithDetailedBlocks = await Promise.all(pages.map(async (page)=>{
         const detailedBlocks = await getBlockDetails(page.blocksCollection?.items || []);
         return {
@@ -249,21 +257,20 @@ async function HomePage() {
                 children: "Página Principal"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 57,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stories$2f$page$2f$Page$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Page"], {
                 pages: pagesWithDetailedBlocks
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 58,
+                lineNumber: 61,
                 columnNumber: 7
-            }, this),
-            " "
+            }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 56,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }
