@@ -59,8 +59,8 @@ export interface HomePageProps {
   export interface ContentBlockBase {
     contentTitle: string | null;
     contentImage: {
-      url: string | null;
-      fileName: string | null;
+      url: any | null;
+      fileName: any | null
     } | null;
     contentDescription: {
       json: any;
