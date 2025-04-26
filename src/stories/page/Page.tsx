@@ -6,6 +6,7 @@ import { PageItem, ContentBlock } from '../../types/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
 import Card from '../card/Card';
+import { References } from '../references/References';
 
 type User = {
   name: string;
@@ -61,13 +62,33 @@ export const Page: React.FC<PageProps> = ({ pages }) => {
                   {documentToReactComponents(page.content.json, options)}
                 </div>
               )}
-            {page.detailedBlocks?.map((block: any, index) => (
-              <div key={`row-${index}`} style={{ display: 'flex', flexDirection: 'row' }}>
-                {block.detailedContents?.map((contentBlock: ContentBlock, idx: number) => (
-                  <Card key={contentBlock.sys.id || `card-${index}-${idx}`} block={contentBlock} />
-                ))}
-              </div>
-            ))}
+              {page.detailedBlocks?.map((block: any, index) => {
+                const blockType = block.nameBlock?.[0] || 'Card';
+                console.log("block", block);
+                if (blockType === 'Card') {
+                  return (
+                    <div key={`row-${index}`}>
+                      <h1 className='head-name'> Bloque tipo card </h1>
+                      <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        {block.detailedContents?.map((contentBlock: ContentBlock, idx: number) => (
+                          <Card key={contentBlock.sys.id || `card-${index}-${idx}`} block={contentBlock} />
+                        ))}
+                      </div>
+
+                    </div>
+                  )
+                }
+                if (blockType === "References") {
+                  return <References desciption={block.descripion} />
+                }
+                return (
+                  <div>
+                    <div className="p-4 border border-red-200 bg-red-50">
+                      <p>Unsupported block type: {blockType}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>

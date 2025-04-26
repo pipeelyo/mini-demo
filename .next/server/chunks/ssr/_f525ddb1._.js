@@ -363,7 +363,7 @@ const options = {
                 children: text
             }, void 0, false, {
                 fileName: "[project]/src/stories/page/Page.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 46
             }, this)
     },
@@ -372,14 +372,14 @@ const options = {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/stories/page/Page.tsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 68
             }, this),
         [__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$contentful$2f$rich$2d$text$2d$types$2f$dist$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BLOCKS"].HEADING_2]: (_node, children)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/stories/page/Page.tsx",
-                lineNumber: 28,
+                lineNumber: 29,
                 columnNumber: 68
             }, this)
     },
@@ -391,7 +391,7 @@ const options = {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/stories/page/Page.tsx",
-                lineNumber: 32,
+                lineNumber: 33,
                 columnNumber: 7
             }, this)
     }
@@ -411,7 +411,7 @@ const Page = ({ pages })=>{
                     })
             }, void 0, false, {
                 fileName: "[project]/src/stories/page/Page.tsx",
-                lineNumber: 44,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -421,7 +421,7 @@ const Page = ({ pages })=>{
                         children: "Lista de Páginas desde Contentful"
                     }, void 0, false, {
                         fileName: "[project]/src/stories/page/Page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -433,7 +433,7 @@ const Page = ({ pages })=>{
                                         children: page.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/stories/page/Page.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 57,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -444,7 +444,7 @@ const Page = ({ pages })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/stories/page/Page.tsx",
-                                        lineNumber: 57,
+                                        lineNumber: 58,
                                         columnNumber: 15
                                     }, this),
                                     page.content?.json && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -452,47 +452,56 @@ const Page = ({ pages })=>{
                                         children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$contentful$2f$rich$2d$text$2d$react$2d$renderer$2f$dist$2f$rich$2d$text$2d$react$2d$renderer$2e$es5$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["documentToReactComponents"])(page.content.json, options)
                                     }, void 0, false, {
                                         fileName: "[project]/src/stories/page/Page.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 61,
                                         columnNumber: 17
                                     }, this),
-                                    page.detailedBlocks?.map((block, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            style: {
-                                                display: 'flex',
-                                                flexDirection: 'row'
-                                            },
-                                            children: block.detailedContents?.map((contentBlock, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stories$2f$card$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                    block: contentBlock
-                                                }, contentBlock.sys.id || `card-${index}-${idx}`, false, {
-                                                    fileName: "[project]/src/stories/page/Page.tsx",
-                                                    lineNumber: 67,
-                                                    columnNumber: 19
-                                                }, this))
-                                        }, `row-${index}`, false, {
+                                    page.detailedBlocks?.map((block, index)=>{
+                                        console.log("block", block.nameBlock[0]);
+                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                style: {
+                                                    display: 'flex',
+                                                    flexDirection: 'row'
+                                                },
+                                                children: block.detailedContents?.map((contentBlock, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stories$2f$card$2f$Card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                        block: contentBlock
+                                                    }, contentBlock.sys.id || `card-${index}-${idx}`, false, {
+                                                        fileName: "[project]/src/stories/page/Page.tsx",
+                                                        lineNumber: 71,
+                                                        columnNumber: 23
+                                                    }, this))
+                                            }, `row-${index}`, false, {
+                                                fileName: "[project]/src/stories/page/Page.tsx",
+                                                lineNumber: 69,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
                                             fileName: "[project]/src/stories/page/Page.tsx",
-                                            lineNumber: 65,
-                                            columnNumber: 15
-                                        }, this))
+                                            lineNumber: 68,
+                                            columnNumber: 17
+                                        }, this);
+                                    })
                                 ]
                             }, page.slug || page.title || 'unknown', true, {
                                 fileName: "[project]/src/stories/page/Page.tsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/stories/page/Page.tsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/stories/page/Page.tsx",
-                lineNumber: 51,
+                lineNumber: 52,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/stories/page/Page.tsx",
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 5
     }, this);
 };

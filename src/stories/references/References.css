@@ -1,0 +1,50 @@
+.references-container {
+    padding-top: 15px;
+    width: 100%;
+}
+
+.quote-block {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 4rem;
+    height: 4rem;
+    color: #f3f4f6; /* Light gray */
+    z-index: 0;
+}
+
+.dark .quote-icon {
+    color: #404040; /* Dark gray for dark mode */
+}
+
+.quote-content {
+    position: relative;
+    z-index: 10;
+}
+
+.quote-text {
+    color: #1f2937; /* Gray-800 */
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+    .quote-text {
+        font-size: 1.25rem; /* sm:text-xl */
+    }
+}
+
+.dark .quote-text {
+    color: #ffffff; /* White for dark mode */
+}
+
+.head-name {
+    color: red;
+}

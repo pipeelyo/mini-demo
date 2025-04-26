@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/stories/references/References.css"],"sourcesContent":[".references-container {\n    padding-top: 15px;\n    width: 100%;\n}\n\n.quote-block {\n    position: relative;\n    margin: 0;\n    padding: 0;\n}\n\n.quote-icon {\n    position: absolute;\n    top: -1.5rem;\n    left: -1.5rem;\n    width: 4rem;\n    height: 4rem;\n    color: #f3f4f6; /* Light gray */\n    z-index: 0;\n}\n\n.dark .quote-icon {\n    color: #404040; /* Dark gray for dark mode */\n}\n\n.quote-content {\n    position: relative;\n    z-index: 10;\n}\n\n.quote-text {\n    color: #1f2937; /* Gray-800 */\n    font-style: italic;\n    font-size: 1rem;\n    line-height: 1.5;\n}\n\n@media (min-width: 640px) {\n    .quote-text {\n        font-size: 1.25rem; /* sm:text-xl */\n    }\n}\n\n.dark .quote-text {\n    color: #ffffff; /* White for dark mode */\n}\n\n.head-name {\n    color: red;\n}"],"names":[],"mappings":"AAAA;;;;;AAKA;;;;;;AAMA;;;;;;;;;;AAUA;;;;AAIA;;;;;AAKA;;;;;;;AAOA;EACI;;;;;AAKJ;;;;AAIA"}}]
+}

@@ -76,13 +76,14 @@ export interface HomePageProps {
 
 // Interfaz para el bloque principal que incluye detailedContents
 export interface Block {
-  __typename: string;
-  title: string;
-  descripion: string;
-  contentCollection: {
+  __typename?: string;
+  title?: string;
+  descripion?: string;
+  nameblock?: string;
+  contentCollection?: {
     __typename: string;
     total: number;
     items: ContentBlock[];
   };
-  detailedContents: ContentBlock[];  // Contiene los bloques con detalles
+  detailedContents?: ContentBlock[];  // Contiene los bloques con detalles
 }

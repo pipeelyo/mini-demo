@@ -57,7 +57,6 @@ export default async function HomePage() {
 
   return (
     <div>
-      <h1>Página Principal</h1>
       <PageComponent pages={pagesWithDetailedBlocks} />
     </div>
   );
