@@ -24,6 +24,7 @@ export const GET_PAGES_WITH_BLOCKS = gql`
             title
             descripion
             nameBlock
+            textColor
             contentCollection(limit: 5) {
               total
               items {

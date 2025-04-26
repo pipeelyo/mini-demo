@@ -345,16 +345,21 @@ __turbopack_context__.s({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 ;
 ;
-const References = ({ desciption })=>{
+const References = ({ desciption, textColor = 'black' })=>{
+    // Establecer el color del texto
+    const textStyle = {
+        color: textColor || 'black' // Si textColor es null o undefined, usa negro
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "references-component",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "head-name",
                 children: "Bloque tipo References:"
             }, void 0, false, {
                 fileName: "[project]/src/stories/references/References.tsx",
-                lineNumber: 7,
-                columnNumber: 13
+                lineNumber: 14,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "references-container",
@@ -374,51 +379,52 @@ const References = ({ desciption })=>{
                                 fill: "currentColor"
                             }, void 0, false, {
                                 fileName: "[project]/src/stories/references/References.tsx",
-                                lineNumber: 11,
-                                columnNumber: 25
+                                lineNumber: 26,
+                                columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/stories/references/References.tsx",
-                            lineNumber: 10,
-                            columnNumber: 21
+                            lineNumber: 17,
+                            columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "quote-content",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "quote-text",
+                                style: textStyle,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
-                                    children: desciption ? desciption : 'el bloque se encuentra sin descripción'
+                                    children: desciption || 'El bloque se encuentra sin descripción'
                                 }, void 0, false, {
                                     fileName: "[project]/src/stories/references/References.tsx",
-                                    lineNumber: 15,
-                                    columnNumber: 51
+                                    lineNumber: 34,
+                                    columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/stories/references/References.tsx",
-                                lineNumber: 15,
-                                columnNumber: 25
+                                lineNumber: 33,
+                                columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/stories/references/References.tsx",
-                            lineNumber: 14,
-                            columnNumber: 21
+                            lineNumber: 32,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/stories/references/References.tsx",
-                    lineNumber: 9,
-                    columnNumber: 17
+                    lineNumber: 16,
+                    columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/stories/references/References.tsx",
-                lineNumber: 8,
-                columnNumber: 13
+                lineNumber: 15,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/stories/references/References.tsx",
-        lineNumber: 5,
-        columnNumber: 9
+        lineNumber: 13,
+        columnNumber: 7
     }, this);
 };
 }}),
@@ -585,10 +591,11 @@ const Page = ({ pages })=>{
                                         }
                                         if (blockType === "References") {
                                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stories$2f$references$2f$References$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["References"], {
-                                                desciption: block.descripion
+                                                desciption: block.descripion,
+                                                textColor: block.textColor
                                             }, void 0, false, {
                                                 fileName: "[project]/src/stories/page/Page.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 81,
                                                 columnNumber: 26
                                             }, this);
                                         }
@@ -602,17 +609,17 @@ const Page = ({ pages })=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/stories/page/Page.tsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 86,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/stories/page/Page.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 85,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/stories/page/Page.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 84,
                                             columnNumber: 19
                                         }, this);
                                     })

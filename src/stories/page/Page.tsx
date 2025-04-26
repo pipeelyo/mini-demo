@@ -74,12 +74,11 @@ export const Page: React.FC<PageProps> = ({ pages }) => {
                           <Card key={contentBlock.sys.id || `card-${index}-${idx}`} block={contentBlock} />
                         ))}
                       </div>
-
                     </div>
                   )
                 }
                 if (blockType === "References") {
-                  return <References desciption={block.descripion} />
+                  return <References desciption={block.descripion}  textColor={block.textColor}/>
                 }
                 return (
                   <div>

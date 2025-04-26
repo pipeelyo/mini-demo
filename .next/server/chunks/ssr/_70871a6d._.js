@@ -75,6 +75,7 @@ const GET_PAGES_WITH_BLOCKS = __TURBOPACK__imported__module__$5b$project$5d2f$no
             title
             descripion
             nameBlock
+            textColor
             contentCollection(limit: 5) {
               total
               items {
