@@ -13,7 +13,10 @@ type User = {
 };
 
 export interface PageWithDetailedBlocks extends PageItem {
-  detailedBlocks?: ContentBlock[]; // opcional si se usa en otras versiones
+  detailedBlocks?: Array<{
+    nameBlock?: string[];
+    detailedContents?: ContentBlock[];
+  }>;
 }
 
 interface PageProps {
@@ -25,12 +28,14 @@ const options = {
     [MARKS.BOLD]: (text: React.ReactNode) => <strong>{text}</strong>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (_node: any, children: React.ReactNode) => <p>{children}</p>,
-    [BLOCKS.HEADING_2]: (_node: any, children: React.ReactNode) => <h2>{children}</h2>,
+    [BLOCKS.PARAGRAPH]: (_node: any, children: React.ReactNode) => <p className="mb-4">{children}</p>,
+    [BLOCKS.HEADING_2]: (_node: any, children: React.ReactNode) => (
+      <h2 className="text-2xl font-bold mb-3">{children}</h2>
+    ),
   },
   renderInline: {
     [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
-      <a href={node.data.uri} target="_blank" rel="noopener noreferrer">
+      <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
         {children}
       </a>
     ),
@@ -53,7 +58,7 @@ export const Page: React.FC<PageProps> = ({ pages }) => {
         <h2>Lista de Páginas desde Contentful</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {pages.map((page) => (
-            <div key={page.slug || page.title || 'unknown'}>
+            <div key={page.slug || page.title || `page-${Date.now()}`}>
               <h3 className="text-xl font-bold">{page.title}</h3>
               <p className="mb-2 text-gray-600">Slug: {page.slug}</p>
 
@@ -62,32 +67,28 @@ export const Page: React.FC<PageProps> = ({ pages }) => {
                   {documentToReactComponents(page.content.json, options)}
                 </div>
               )}
-              {page.detailedBlocks?.map((block: any, index) => {
-                const blockType = block.nameBlock?.[0] || 'Card';
-                console.log("block", block);
-                if (blockType === 'Card') {
+
+              <div>
+                {page.detailedBlocks?.map((blockGroup: any, index: number) => {
+                  const blockType = blockGroup.nameBlock?.[0] || 'Card';
+                  
                   return (
-                    <div key={`row-${index}`}>
-                      <h1 className='head-name'> Bloque tipo card </h1>
-                      <div style={{ display: 'flex', flexDirection: 'row' }}>
-                        {block.detailedContents?.map((contentBlock: ContentBlock, idx: number) => (
-                          <Card key={contentBlock.sys.id || `card-${index}-${idx}`} block={contentBlock} />
+                    <div key={`block-group-${index}`}>
+                      <div key={`row-${index}`} className="flex flex-row flex-wrap gap-4">
+                        {blockGroup.detailedContents?.map((contentBlock:any, idx:number) => (
+                          <Card 
+                            key={`card-${contentBlock.sys.id}-${idx}`} 
+                            block={contentBlock} 
+                          />
                         ))}
                       </div>
+                      {blockType === "References" && (
+                        <References key={`references-${index}`} desciption={blockGroup.descripion}  textColor={blockGroup.textColor}/>
+                      )}
                     </div>
-                  )
-                }
-                if (blockType === "References") {
-                  return <References desciption={block.descripion}  textColor={block.textColor}/>
-                }
-                return (
-                  <div>
-                    <div className="p-4 border border-red-200 bg-red-50">
-                      <p>Unsupported block type: {blockType}</p>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           ))}
         </div>
